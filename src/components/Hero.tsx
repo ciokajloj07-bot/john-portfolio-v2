@@ -1,71 +1,67 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="flex min-h-screen items-center justify-center px-6 pt-20">
-      <div className="mx-auto max-w-5xl text-center">
+<section className="flex min-h-screen items-center px-8 pt-40">
+      <div className="mx-auto w-full max-w-7xl">
 
-        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto mb-8 inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur-xl"
-        >
-          Available for freelance projects
-        </motion.div>
-
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="text-5xl font-bold tracking-tight text-white sm:text-7xl"
-        >
-          Building Modern
-          <br />
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-white bg-clip-text text-transparent">
-            Digital Experiences
-          </span>
-        </motion.h1>
-
-        {/* Description */}
-        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400"
         >
-          I design and develop fast, responsive websites and applications
-          using React, Next.js, TypeScript, and modern frontend technologies.
-        </motion.p>
 
-        {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9 }}
-          className="mt-10 flex flex-col justify-center gap-4 sm:flex-row"
-        >
-          <Link
-            href="/projects"
-            className="rounded-full bg-white px-8 py-3 font-medium text-black transition hover:scale-105"
-          >
-            View Projects
-          </Link>
+          {/* Label */}
+          <p className="text-sm uppercase tracking-[0.5em] text-blue-600 dark:text-blue-400">
+            Frontend Developer
+          </p>
 
-          <Link
-            href="/contact"
-            className="rounded-full border border-white/10 bg-white/5 px-8 py-3 font-medium text-white backdrop-blur-xl transition hover:bg-white/10"
-          >
-            Contact Me
-          </Link>
+
+          {/* Main Heading */}
+          <h1 className="mt-8 max-w-5xl text-6xl font-bold leading-tight text-black dark:text-white md:text-8xl">
+            Building digital experiences
+            <br />
+            that feel effortless.
+          </h1>
+
+
+          {/* Description */}
+          <p className="mt-8 max-w-2xl text-xl leading-8 text-gray-600 dark:text-gray-400">
+            I design and develop modern web applications
+            using React, Next.js, TypeScript, and Tailwind CSS.
+            I create fast, responsive, and visually engaging
+            experiences for the modern web.
+          </p>
+
+
+          {/* Buttons */}
+          <div className="mt-12 flex flex-wrap gap-4">
+
+            <Link
+              href="/projects"
+              className="rounded-full bg-blue-600 px-8 py-4 font-medium text-white transition hover:scale-105 hover:bg-blue-700"
+            >
+              View Work
+            </Link>
+
+
+            <Link
+              href="/contact"
+              className="rounded-full border border-gray-300 px-8 py-4 font-medium text-black transition hover:border-blue-500 hover:text-blue-500 dark:border-white/20 dark:text-white dark:hover:border-blue-400 dark:hover:text-blue-400"
+            >
+              Contact
+            </Link>
+
+          </div>
+
+
         </motion.div>
 
       </div>
+
     </section>
   );
 }

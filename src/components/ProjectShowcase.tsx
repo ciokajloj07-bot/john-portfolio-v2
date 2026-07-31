@@ -34,10 +34,10 @@ export default function ProjectShowcase({
       }`}
     >
 
-      {/* Image */}
-      <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-2 backdrop-blur-xl">
+      {/* Project Image */}
+      <div className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 p-2 transition dark:border-white/10 dark:bg-white/5">
 
-        <div className="absolute inset-0 bg-blue-500/10 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-blue-500/20 opacity-0 blur-3xl transition duration-500 group-hover:opacity-100" />
 
         <Image
           src={image}
@@ -50,29 +50,31 @@ export default function ProjectShowcase({
       </div>
 
 
-      {/* Content */}
+      {/* Project Content */}
       <div>
 
-        <h3 className="text-4xl font-bold text-white">
+        <h3 className="text-4xl font-bold text-black dark:text-white">
           {title}
         </h3>
 
 
-        <p className="mt-6 text-lg leading-8 text-gray-400">
+        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-400">
           {description}
         </p>
 
 
-        {/* Technologies */}
+        {/* Technology Tags */}
         <div className="mt-6 flex flex-wrap gap-3">
+
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300"
+              className="rounded-full border border-gray-200 bg-gray-100 px-4 py-2 text-sm text-gray-700 dark:border-white/10 dark:bg-white/5 dark:text-gray-300"
             >
               {tech}
             </span>
           ))}
+
         </div>
 
 
@@ -82,22 +84,21 @@ export default function ProjectShowcase({
           <Link
             href={liveUrl}
             target="_blank"
-            className="rounded-full bg-white px-6 py-3 font-medium text-black transition hover:scale-105"
+            className="rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition hover:scale-105 hover:bg-blue-700"
           >
             Live Demo →
           </Link>
 
 
-          {githubUrl && (
-            <Link
-              href={githubUrl}
-              target="_blank"
-              className="rounded-full border border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition hover:bg-white/10"
-            >
-              GitHub
-            </Link>
-          )}
-
+{githubUrl && (
+  <Link
+    href={githubUrl}
+    target="_blank"
+    className="rounded-full bg-blue-600 px-6 py-3 font-medium text-white transition hover:scale-105 hover:bg-blue-700"
+  >
+    GitHub →
+  </Link>
+)}
         </div>
 
       </div>
@@ -105,3 +106,4 @@ export default function ProjectShowcase({
     </motion.div>
   );
 }
+

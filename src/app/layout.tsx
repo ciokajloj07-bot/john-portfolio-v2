@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "John Ciokajlo | Frontend Developer",
   description:
-    "Frontend developer building modern web applications with React, Next.js, TypeScript, and Tailwind CSS.",
+    "Frontend Developer specializing in React, Next.js, TypeScript, and modern web applications.",
 };
 
 export default function RootLayout({
@@ -15,15 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-[#0B0B0F] text-white">
-        <Navbar />
-
-        <main>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider>
           {children}
-        </main>
-
-        <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
